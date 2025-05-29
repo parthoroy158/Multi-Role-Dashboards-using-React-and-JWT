@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 
 const SignUp = () => {
     return (
-        <div className="hero bg-base-200 mt-5">
+        <div className="hero bg-base-200 pt-15">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Sign Up</title>
