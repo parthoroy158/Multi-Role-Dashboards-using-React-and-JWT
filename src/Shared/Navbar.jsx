@@ -3,11 +3,12 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 
-    const items = <div className=' md:flex uppercase' >
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/logIn'>Log In</NavLink></li>
-        <li><NavLink to='/signUp'>Sign Up</NavLink></li>
-    </div>
+    const items =
+        <>
+            <li><NavLink to='/'>Home</NavLink></li>
+            <li><NavLink to='/fff'>About Us</NavLink></li>
+            <li><NavLink to='/allItems'>All Items</NavLink></li>
+        </>
     return (
         <div className="navbar  shadow-sm fixed z-10 dark:text-white bg-black/50 text-white max-w-7xl mx-auto ">
             <div className="navbar-start">
@@ -22,7 +23,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">ⓛⓘⓒⓗⓔⓔ
-</a>
+                </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -30,7 +31,12 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <div className="navbar-center hidden lg:flex ">
+                    <ul className="menu menu-horizontal px-1">
+                        <li><NavLink to='/logIn'>Log In</NavLink></li>
+                        <li><NavLink to='/signUp'>Sign Up</NavLink></li>
+                    </ul>
+                </div>
             </div>
         </div>
     );

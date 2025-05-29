@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 
 const SignUp = () => {
     return (
-        <div className="hero bg-base-200 pt-15">
+        <div className="hero bg-base-200 h-screen">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Sign Up</title>
@@ -13,11 +13,17 @@ const SignUp = () => {
             </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-                    <Lottie className='w-70' animationData={signUp}></Lottie>
+                    <Lottie className='w-120' animationData={signUp}></Lottie>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <h1 className="text-4xl font-bold text-center mt-2 pt-2">Sign Up now!</h1>
                     <form className="card-body">
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Name" className="input input-bordered" required />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>

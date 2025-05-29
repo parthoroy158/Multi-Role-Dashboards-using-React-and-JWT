@@ -2,10 +2,11 @@ import Lottie from 'lottie-react';
 import React from 'react';
 import logIn from '../../../public/Animation -logIn.json'
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 const LogIn = () => {
     return (
-        <div className="hero bg-base-200 pt-15">
+        <div className="hero bg-base-200 h-screen">
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Log In</title>
@@ -13,8 +14,7 @@ const LogIn = () => {
             </Helmet>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
-
-                    <Lottie className='w-70' animationData={logIn}></Lottie>
+                    <Lottie className='w-120' animationData={logIn}></Lottie>
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <h1 className="text-4xl font-bold text-center mt-2 pt-2">Login now!</h1>
@@ -36,6 +36,7 @@ const LogIn = () => {
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary w-full">Login</button>
+                            <p className='mt-2' >Already have an Account? <Link to='/signUp'><span className='font-bold'> Click Here</span></Link></p>
                         </div>
                     </form>
                 </div>
