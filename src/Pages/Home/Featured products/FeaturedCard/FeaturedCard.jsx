@@ -20,7 +20,7 @@ const FeaturedCard = ({ item }) => {
                         <p className='font-bold'>Price: {price} {currency}</p>
                         <Rating
                             style={{ maxWidth: 90 }}
-                            value={3}
+                            value={rating}
                             readOnly
                         />
                     </div>

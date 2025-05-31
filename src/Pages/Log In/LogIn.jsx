@@ -3,8 +3,33 @@ import React from 'react';
 import logIn from '../../../public/Animation -logIn.json'
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import UseAuth from '../../Hooks/UseAuth';
+import Swal from 'sweetalert2';
 
 const LogIn = () => {
+    const { userLogIn } = UseAuth()
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data) => {
+        userLogIn(data.email, data.password)
+            .then(result => {
+                Swal.fire({
+                    title: "Successfully Log In!",
+                    icon: "success",
+                    draggable: true
+                });
+                console.log('Successfully Log In', result)
+            })
+            .catch(error => {
+                console.log(error, 'error')
+            })
+    }
     return (
         <div className="hero bg-base-200 h-screen">
             <Helmet>
@@ -18,18 +43,18 @@ const LogIn = () => {
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <h1 className="text-4xl font-bold text-center mt-2 pt-2">Login now!</h1>
-                    <form className="card-body">
+                    <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered" required />
+                            <input type="email" placeholder="email" {...register("email")} className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" required />
+                            <input type="password" placeholder="password" {...register("password")} className="input input-bordered" required />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
