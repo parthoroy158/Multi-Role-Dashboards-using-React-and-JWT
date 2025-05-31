@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../../Shared/Navbar';
 import { Helmet } from 'react-helmet';
+import Footer from '../../Shared/Footer';
 
 
 const MainLayout = () => {
@@ -14,6 +15,7 @@ const MainLayout = () => {
             </Helmet>
             <Navbar></Navbar>
             <Outlet></Outlet>
+            <Footer></Footer>
 
         </div>
     );

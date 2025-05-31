@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { IoMdHome } from "react-icons/io";
 import Banner from './Banner/Banner';
 import Body from './Body/Body';
+import FeaturedProducts from './Featured products/FeaturedProducts';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <Body></Body>
+            <FeaturedProducts></FeaturedProducts>
         </div>
     );
 };

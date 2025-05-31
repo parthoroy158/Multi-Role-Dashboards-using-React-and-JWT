@@ -5,10 +5,10 @@ const Body = () => {
     return (
         <div className='mt-15'>
             <SectionTitle
-                heading="Order Online"
+                heading="Shop Now"
                 SbuHeading='24 hr Available'>
             </SectionTitle>
-            <div className='divider mt-15'></div>
+            <div className='divider mt-5'></div>
         </div >
     );
 };
