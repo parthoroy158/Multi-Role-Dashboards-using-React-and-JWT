@@ -5,10 +5,12 @@ import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import UseAuth from '../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 
 const SignUp = () => {
-    const { createUser } = UseAuth()
+    const { createUser, userUpdate } = UseAuth()
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -18,11 +20,19 @@ const SignUp = () => {
     const onSubmit = (data) => {
         createUser(data.email, data.password)
             .then(result => {
-                Swal.fire({
-                    title: "Successfully Sign Up!",
-                    icon: "success",
-                    draggable: true
-                });
+                userUpdate(data.name, data.photoURL)
+                    .then(result => {
+                        console.log(result)
+                        Swal.fire({
+                            title: "Successfully Sign Up!",
+                            icon: "success",
+                            draggable: true
+                        });
+                        navigate('/')
+                    })
+                    .catch(error => {
+                        console.log('Error', error)
+                    })
                 console.log("Successfully Sign Up", result)
             })
             .catch(error => {
@@ -49,6 +59,12 @@ const SignUp = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" placeholder="Name" {...register("name")} className="input input-bordered" required />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo</span>
+                            </label>
+                            <input type="url" placeholder="Name" {...register("photoURL")} className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">

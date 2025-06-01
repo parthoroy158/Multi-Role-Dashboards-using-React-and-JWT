@@ -1,8 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import UseAuth from '../Hooks/UseAuth';
 
 const Navbar = () => {
+    const { user, userLogOut } = UseAuth()
 
+
+    const handleLogOut = () => {
+        userLogOut()
+            .then(result => {
+                console.log('Successfully log out', result)
+            })
+            .catch(error => {
+                console.log("error", error)
+            })
+    }
     const items =
         <>
             <li><NavLink to='/'>Home</NavLink></li>
@@ -33,8 +45,18 @@ const Navbar = () => {
             <div className="navbar-end">
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1">
-                        <li><NavLink to='/logIn'>Log In</NavLink></li>
-                        <li><NavLink to='/signUp'>Sign Up</NavLink></li>
+                        {
+                            user ?
+                                <div className='flex items-center gap-3'>
+                                    <p>{user.displayName}</p>
+                                    <img className='w-8 rounded-full' src={user.photoURL} alt="" />
+                                    <button className='btn btn-ghost btn-sm uppercase' onClick={handleLogOut}>Log Out</button>
+                                </div> :
+                                <div className='flex uppercase'>
+                                    <li><NavLink to='/logIn'>Log In</NavLink></li>
+                                    <li><NavLink to='/signUp'>Sign Up</NavLink></li>
+                                </div>
+                        }
                     </ul>
                 </div>
             </div>
