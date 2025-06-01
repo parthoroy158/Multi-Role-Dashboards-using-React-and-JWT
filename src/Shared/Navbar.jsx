@@ -1,9 +1,12 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import UseAuth from '../Hooks/UseAuth';
+import UseCart from '../Hooks/UseCart';
 
 const Navbar = () => {
     const { user, userLogOut } = UseAuth()
+    const [item] = UseCart()
+   
+    console.log(item)
 
 
     const handleLogOut = () => {
@@ -20,6 +23,12 @@ const Navbar = () => {
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/fff'>About Us</NavLink></li>
             <li><NavLink to='/allItems'>All Items</NavLink></li>
+            <li >
+                <div className='flex'>
+                    <Link to='/dashboard/cart'>Cart</Link>
+                    <div className="badge badge-sm badge-secondary">+{item.length}</div>
+                </div>
+            </li>
         </>
     return (
         <div className="navbar  shadow-sm fixed z-10 dark:text-white bg-black/50 text-white max-w-7xl mx-auto ">

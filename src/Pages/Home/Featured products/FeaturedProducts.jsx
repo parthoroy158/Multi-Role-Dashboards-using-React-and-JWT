@@ -11,17 +11,24 @@ const FeaturedProducts = () => {
     const axiosPublic = UseAxiosPublic()
 
     useEffect(() => {
-        axiosPublic()
+        axiosPublic('/lichees')
             .then(res => {
-                setLichee(res.data)
-                console.log(res.data)
+                const featureLichee = res.data.filter(item => item.rating > 4.5)
+                console.log(featureLichee)
+                setLichee(featureLichee)
+
             })
     }, [])
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {
-                lichee.map(item => <FeaturedCard item={item}></FeaturedCard>)
-            }
+        <div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {
+                    lichee.map(item => <FeaturedCard item={item}></FeaturedCard>)
+                }
+            </div>
+            <div className='text-center mt-5 '>
+                <button className='btn btn-ghost border-b-amber-300 w-30'>View All</button>
+            </div>
         </div>
     );
 };

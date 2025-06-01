@@ -2,97 +2,121 @@
     {
         "name": "Fresh Organic Lychee",
         "price": 5.99,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://www.healthline.com/hlcmsresource/images/AN_images/lychees-1296x728-feature.jpg",
         "details": "Delicious organic lychees, handpicked for maximum sweetness and freshness. Ideal for snacking or juicing.",
-        "rating": 4.8
+        "rating": 4.8,
+        "review_1": "Absolutely the sweetest lychees I’ve had in a while!",
+        "review_2": "Fresh and juicy. Great for summer treats."
     },
     {
         "name": "Premium Thai Lychee",
         "price": 6.49,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://image.made-in-china.com/2f0j00zpqbeUwEhZro/High-Quality-Fresh-Lichee-Fruit-Made-in-China.webp",
         "details": "Imported lychees from Thailand, known for their large size, juicy flesh, and floral aroma.",
-        "rating": 4.6
+        "rating": 4.6,
+        "review_1": "These are huge and super flavorful. Worth the price.",
+        "review_2": "Tastes like the ones I had in Thailand!"
     },
     {
         "name": "Frozen Seedless Lychee Pack",
         "price": 7.25,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKT9LcCzk4d4Up1T9eso9G6Tuwk3q7jUS0kw&s",
         "details": "Convenient seedless lychees, peeled and frozen. Perfect for smoothies, desserts, and cocktails.",
-        "rating": 4.5
+        "rating": 4.5,
+        "review_1": "Perfect for smoothies—no need to peel or seed!",
+        "review_2": "Great quality for frozen fruit. Very convenient."
     },
     {
         "name": "Dried Lychee Snacks",
         "price": 8.50,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://i.ebayimg.com/images/g/plAAAOSwdxBlOqM5/s-l400.jpg",
         "details": "Sweet and chewy dried lychee slices, great as a healthy snack or baking ingredient.",
-        "rating": 4.3
+        "rating": 4.3,
+        "review_1": "A little too sweet for me, but tasty overall.",
+        "review_2": "Love these as a snack at work."
     },
     {
         "name": "Lychee Juice Concentrate",
         "price": 9.99,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://www.healthline.com/hlcmsresource/images/AN_images/lychees-1296x728-feature.jpg",
         "details": "Pure lychee juice concentrate with no added sugar, perfect for cocktails and refreshing drinks.",
-        "rating": 4.7
+        "rating": 4.7,
+        "review_1": "Fantastic flavor! Great in cocktails and sparkling water.",
+        "review_2": "Strong lychee taste, just a bit pricey."
     },
     {
         "name": "Lychee Honey",
         "price": 12.00,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://image.made-in-china.com/2f0j00zpqbeUwEhZro/High-Quality-Fresh-Lichee-Fruit-Made-in-China.webp",
         "details": "Natural honey infused with lychee flavor, harvested from lychee orchards.",
-        "rating": 4.9
+        "rating": 4.9,
+        "review_1": "Incredible taste—pairs beautifully with tea.",
+        "review_2": "Smooth and floral. My new favorite honey."
     },
     {
         "name": "Lychee Sorbet",
         "price": 6.75,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://www.shutterstock.com/image-photo/juicy-lychee-cut-half-isolated-260nw-2160478637.jpg",
         "details": "Refreshing lychee sorbet made from real fruit, dairy-free and vegan-friendly.",
-        "rating": 4.4
+        "rating": 4.4,
+        "review_1": "So refreshing and light—perfect dessert.",
+        "review_2": "I love that it’s vegan and full of real fruit flavor."
     },
     {
         "name": "Lychee-flavored Green Tea",
         "price": 4.99,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://i.ebayimg.com/images/g/plAAAOSwdxBlOqM5/s-l400.jpg",
         "details": "Delicate green tea infused with natural lychee flavor for a fragrant and soothing experience.",
-        "rating": 4.2
+        "rating": 4.2,
+        "review_1": "Subtle lychee flavor, very soothing.",
+        "review_2": "Good value and makes a nice cold brew."
     },
     {
         "name": "Lychee Fruit Jam",
         "price": 7.80,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://www.shutterstock.com/image-photo/juicy-lychee-cut-half-isolated-260nw-2160478637.jpg",
         "details": "Sweet and tangy lychee jam made with organic fruits, perfect for toast or desserts.",
-        "rating": 4.6
+        "rating": 4.6,
+        "review_1": "Amazing on toast! The tangy sweetness is perfect.",
+        "review_2": "Great as a topping for cheesecake too."
     },
     {
         "name": "Lychee Bubble Tea Kit",
         "price": 15.00,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ74AQrqeVxZm-EvYBpr6tkquDJbetBzb73LQ&s",
         "details": "DIY bubble tea kit with lychee flavor, tapioca pearls, and tea bags included.",
-        "rating": 4.5
+        "rating": 4.5,
+        "review_1": "Easy to make and super fun with friends.",
+        "review_2": "Tastes just like store-bought bubble tea!"
     },
     {
         "name": "Lychee Essential Oil",
         "price": 18.50,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ74AQrqeVxZm-EvYBpr6tkquDJbetBzb73LQ&s",
         "details": "Pure lychee essential oil for aromatherapy and skin care, extracted naturally.",
-        "rating": 4.8
+        "rating": 4.8,
+        "review_1": "Smells heavenly! Great for my diffuser.",
+        "review_2": "I use it in skincare and it’s very gentle."
     },
     {
         "name": "Canned Lychee in Syrup",
         "price": 5.25,
-        "currency": "USD",
+        "currency": "BDT",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ74AQrqeVxZm-EvYBpr6tkquDJbetBzb73LQ&s",
         "details": "Ready-to-eat lychee fruit canned in sweet syrup, ideal for desserts and drinks.",
-        "rating": 4.3
+        "rating": 4.3,
+        "review_1": "Convenient and tasty, though a bit too sweet.",
+        "review_2": "Perfect for desserts. Kids love them."
     }
 ]

@@ -3,7 +3,7 @@ import React from 'react';
 
 
 const AxiosPublic = axios.create({
-    baseURL: 'lichee.json'
+    baseURL: 'http://localhost:5000'
 })
 const UseAxiosPublic = () => {
 
