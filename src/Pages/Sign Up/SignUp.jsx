@@ -7,9 +7,11 @@ import UseAuth from '../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import UseAxiosPrivate from '../../Hooks/UseAxiosPrivate';
 
 
 const SignUp = () => {
+    const axiosPrivate = UseAxiosPrivate()
     const { createUser, userUpdate, signInWithGoogle } = UseAuth()
     const navigate = useNavigate()
     const {
@@ -24,12 +26,22 @@ const SignUp = () => {
                 userUpdate(data.name, data.photoURL)
                     .then(result => {
                         console.log(result)
-                        Swal.fire({
-                            title: "Successfully Sign Up!",
-                            icon: "success",
-                            draggable: true
-                        });
-                        navigate('/')
+
+                        const user = {
+                            name: data.name,
+                            email: data.email,
+                            photoURL: data.photoURL
+                        }
+                        axiosPrivate.post('/user', user)
+                            .then(res => {
+                                console.log(res.data)
+                                Swal.fire({
+                                    title: "Successfully Sign Up!",
+                                    icon: "success",
+                                    draggable: true
+                                });
+                                navigate('/')
+                            })
                     })
                     .catch(error => {
                         console.log('Error', error)
