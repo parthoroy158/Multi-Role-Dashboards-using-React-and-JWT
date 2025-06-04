@@ -23,7 +23,7 @@ const Navbar = () => {
             <li><NavLink to='/allItems'>All Items</NavLink></li>
             <li >
                 <div className='flex'>
-                    <Link to='/dashboard/cart'>Cart</Link>
+                    <Link to='/dashboard/totalCart'>Cart</Link>
                     <div className="badge badge-sm badge-secondary">+{cart.length}</div>
                 </div>
             </li>
