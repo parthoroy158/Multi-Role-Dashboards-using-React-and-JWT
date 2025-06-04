@@ -6,10 +6,11 @@ import { useForm } from 'react-hook-form';
 import UseAuth from '../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
 
 
 const SignUp = () => {
-    const { createUser, userUpdate } = UseAuth()
+    const { createUser, userUpdate, signInWithGoogle } = UseAuth()
     const navigate = useNavigate()
     const {
         register,
@@ -37,6 +38,15 @@ const SignUp = () => {
             })
             .catch(error => {
                 console.log("Error", error)
+            })
+    }
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => {
+                console.log(error)
             })
     }
 
@@ -85,6 +95,9 @@ const SignUp = () => {
                             <button className="btn btn-primary w-full">Sign Up</button>
                         </div>
                     </form>
+                    <div className=' flex m-2 justify-center'>
+                        <button className='flex items-center gap-2 btn rounded-full bg-black text-white' onClick={handleSignInWithGoogle}> <p className='border bg-white p-1 rounded-full'><FcGoogle /></p> Sign Up With Google</button>
+                    </div>
                 </div>
             </div>
         </div>

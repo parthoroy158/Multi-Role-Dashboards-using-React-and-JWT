@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-a.active{
-background-color: rgb(73, 76, 80);
+a.active {
+    background-color: rgb(73, 76, 80);
+}
+
+selected a.active {
+    background-color: rgb(73, 76, 80);
 }

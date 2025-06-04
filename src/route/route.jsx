@@ -10,6 +10,9 @@ import DashBoard from "../Pages/DashBoard/DashBoard";
 
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Cart from "../Pages/Cart/Cart";
+import TotalCart from "../Pages/TotalCart/TotalCart";
+import PaymentHistory from "../Pages/PaymentHistory/PaymentHistory";
+import TotalUsers from "../Pages/TotalUsers/TotalUsers";
 
 const router = createBrowserRouter([
     {
@@ -36,7 +39,19 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/dashboard/cart',
-                element:<Cart></Cart>
+                element: <PrivateRoute><Cart></Cart></PrivateRoute>
+            },
+            {
+                path: '/dashboard/totalCart',
+                element: <TotalCart></TotalCart>
+            },
+            {
+                path: '/dashboard/paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
+            },
+            {
+                path: '/dashboard/totalUsers',
+                element: <TotalUsers></TotalUsers>
             }
         ]
 

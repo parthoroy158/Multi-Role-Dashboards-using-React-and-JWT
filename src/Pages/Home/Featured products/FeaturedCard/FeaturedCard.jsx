@@ -1,6 +1,6 @@
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import UseAuth from '../../../../Hooks/UseAuth';
 import UseAxiosPrivate from '../../../../Hooks/UseAxiosPrivate';
 import UseCart from '../../../../Hooks/UseCart';
@@ -9,12 +9,16 @@ import Swal from 'sweetalert2';
 
 
 const FeaturedCard = ({ item }) => {
+    const navigate = useNavigate()
     const { name, price, rating, image, details, currency, _id } = item
     const { user } = UseAuth()
     const axiosPrivate = UseAxiosPrivate()
     const [, refetch] = UseCart()
 
     const handleAddToCart = (_id) => {
+        if (!user) {
+            navigate('/logIn')
+        }
         console.log('ID:', _id)
         const userInfo = {
             email: user.email,
@@ -34,7 +38,6 @@ const FeaturedCard = ({ item }) => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                console.log(res.data)
                 refetch()
             })
     }

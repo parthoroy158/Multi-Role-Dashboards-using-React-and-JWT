@@ -2,13 +2,18 @@ import Lottie from 'lottie-react';
 import React from 'react';
 import logIn from '../../../public/Animation -logIn.json'
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import UseAuth from '../../Hooks/UseAuth';
 import Swal from 'sweetalert2';
+import { FcGoogle } from "react-icons/fc";
 
 const LogIn = () => {
-    const { userLogIn } = UseAuth()
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
+    const { userLogIn, signInWithGoogle } = UseAuth()
+
 
     const {
         register,
@@ -24,10 +29,21 @@ const LogIn = () => {
                     icon: "success",
                     draggable: true
                 });
-                console.log('Successfully Log In', result)
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error, 'error')
+            })
+    }
+
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result)
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error)
             })
     }
     return (
@@ -64,6 +80,9 @@ const LogIn = () => {
                             <p className='mt-2' >Already have an Account? <Link to='/signUp'><span className='font-bold'> Click Here</span></Link></p>
                         </div>
                     </form>
+                    <div className=' flex m-2 justify-center'>
+                        <button className='flex items-center gap-2 btn rounded-full bg-black text-white' onClick={handleSignInWithGoogle}> <p className='border bg-white p-1 rounded-full'><FcGoogle /></p> Sign In With Google</button>
+                    </div>
                 </div>
             </div>
         </div>

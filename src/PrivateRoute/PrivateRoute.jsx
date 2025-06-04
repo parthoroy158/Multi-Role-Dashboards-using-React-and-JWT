@@ -1,8 +1,9 @@
 import React from 'react';
 import UseAuth from '../Hooks/UseAuth';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
+    const location = useLocation()
 
     const { user, loading } = UseAuth()
 
@@ -14,7 +15,7 @@ const PrivateRoute = ({ children }) => {
             <span className="loading loading-spinner loading-xl"></span>
         </div>
     }
-    return <Navigate to='/logIn'></Navigate>
+    return <Navigate to='/logIn' state={{ from: location }} replace></Navigate>
 };
 
 export default PrivateRoute;

@@ -1,11 +1,13 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../../Shared/Navbar';
 import { Helmet } from 'react-helmet';
 import Footer from '../../Shared/Footer';
 
 
 const MainLayout = () => {
+    const location = useLocation()
+    const noFooter = location.pathname.includes('logIn') || location.pathname.includes('signUp') 
     return (
         <div className='max-w-7xl mx-auto'>
             <Helmet>
@@ -15,7 +17,9 @@ const MainLayout = () => {
             </Helmet>
             <Navbar></Navbar>
             <Outlet></Outlet>
-            <Footer></Footer>
+            {
+                noFooter ? '' : <Footer></Footer>
+            }
 
         </div>
     );

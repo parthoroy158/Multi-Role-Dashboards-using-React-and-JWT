@@ -9,21 +9,19 @@ import FeaturedCard from './FeaturedCard/FeaturedCard';
 const FeaturedProducts = () => {
     const [lichee, setLichee] = useState([])
     const axiosPublic = UseAxiosPublic()
-
     useEffect(() => {
         axiosPublic('/lichees')
             .then(res => {
                 const featureLichee = res.data.filter(item => item.rating > 4.5)
                 console.log(featureLichee)
                 setLichee(featureLichee)
-
             })
     }, [])
     return (
         <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
-                    lichee.map(item => <FeaturedCard item={item}></FeaturedCard>)
+                    lichee.map(item => <FeaturedCard key={item._id} item={item}></FeaturedCard>)
                 }
             </div>
             <div className='text-center mt-5 '>
