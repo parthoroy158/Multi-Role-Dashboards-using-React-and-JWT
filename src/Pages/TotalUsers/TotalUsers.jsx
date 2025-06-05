@@ -6,19 +6,22 @@ const TotalUsers = () => {
     const [user, refetch] = UseUsers()
     const axiosPrivate = UseAxiosPrivate()
 
-    const handleAdmin = (user) => {
-        console.log('User email:', user._id)
+    const handleRole = (user) => {
+        console.log('This is the user details:', user._id)
         axiosPrivate.patch(`/user/${user._id}`)
             .then(res => {
-                Swal.fire({
-                    title: `${user.name} Is now admin!`,
-                    icon: "success",
-                    draggable: true
-                });
-                refetch()
+                console.log(res.data)
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: `${user.name} id now admin`,
+                        icon: "success",
+                        draggable: true
+                    });
+                    refetch()
+                }
+
             })
     }
-
     return (
         <div className='mt-18 ml-10'>
             <h2 className="text-3xl font-bold text-center mt-2">Total users:({user.length})</h2>
@@ -43,9 +46,7 @@ const TotalUsers = () => {
                                 <td>{user.email}</td>
                                 <td>
                                     {
-                                        user.role === "admin" ? <p className="font-bold">Admin</p> : <button className="btn btn-sm" onClick={() => handleAdmin(user)}>
-                                            Role Admin
-                                        </button>
+                                        user.role === "admin" ? <p className="font-bold">Admin</p> : <button className="btn btn-sm" onClick={() => handleRole(user)}>Role Admin</button>
                                     }
                                 </td>
                                 <td><button className="btn btn-sm">Delete</button></td>

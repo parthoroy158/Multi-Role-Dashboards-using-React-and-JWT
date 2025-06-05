@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 import { FcGoogle } from "react-icons/fc";
 
 const LogIn = () => {
-    
+
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/'
@@ -25,7 +25,7 @@ const LogIn = () => {
     const onSubmit = (data) => {
         userLogIn(data.email, data.password)
             .then(result => {
-                
+
                 Swal.fire({
                     title: "Successfully Log In!",
                     icon: "success",

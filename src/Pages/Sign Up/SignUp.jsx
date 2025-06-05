@@ -55,6 +55,20 @@ const SignUp = () => {
     const handleSignInWithGoogle = () => {
         signInWithGoogle()
             .then(result => {
+                const userInfo = {
+                    name: result.user?.displayName,
+                    email: result.user?.email
+                }
+                axiosPrivate.post('/user', userInfo)
+                    .then(res => {
+                        console.log(res.data)
+                        Swal.fire({
+                            title: "Successfully Sign Up!",
+                            icon: "success",
+                            draggable: true
+                        });
+                        navigate('/')
+                    })
                 console.log(result)
             })
             .catch(error => {
